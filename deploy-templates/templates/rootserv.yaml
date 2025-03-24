@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: root-service
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: http
+  selector:
+    app.kubernetes.io/instance: springboot-expose-advanced
+    app.kubernetes.io/name: springboot-expose
+  type: ClusterIP
